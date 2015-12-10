@@ -61,12 +61,12 @@ multiply(5, 7, function (answer) {
 // CONTAINS //
 
 //Code Here for contains
-var swearWord = ["Ass", "Bastard", "Bitch", "Cunt", "Damn", "Fuck", "Shit"];
+var foulLanguage = ["@$$", "B@$t@rd", "B!t(h", "(%^t", "D@m^", "F%(k", "S#!t"];
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 var contains = function (arr, par, cb) {
-  cb(arr.indexOf(par) !== -1, par);
+  cb(arr.indexOf(par) !== -1, par); // The callback will search through array for the element "par", assuming the array isn't false. If the callback encounters "par", it will stop looping.
 };
-contains(swearWord, 'Colt', function (result, par) {
+contains(names, 'Colt', function (result, par) {
   if (result === true) {
     console.log(+ ' is in the array');
   } else {
@@ -96,9 +96,9 @@ unique(names, function (uniqArr) {       // Here we invoke unique(arr, callBack)
 // UNIQUE ALT //
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 var unique = function (arr, callBack) {
-  var newArr = [];
+  var newArr = [];  // declare an empty array, to push the 'names' array into.
   for (var i = 0; i < arr.length; i++) {
-    var currName = arr[i];
+    var currName = arr[i]; // declaring a value that equates to any index in the array.
     if (newArr.indexOf(currName) === -1) {
       newArr.push(currName);
     }
@@ -116,7 +116,7 @@ unique(names, function (uniqArr) {       // Here we invoke unique(arr, callBack)
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 var each = function (arr, cb) {
   for (var i = 0; i < arr.length; i++) {
-    cb(arr[i], i);
+    cb(arr[i], i); // the calllback takes in the elements of the array, and logs their content with "arr[i]" and the index with "i".
   }
   cb(arr);
 };
@@ -151,8 +151,8 @@ var users = [
 
 var getUserById = function (arr, objProp1, cb) {
   for (var i = 0; i < arr.length; i++) {
-    var indice = arr[i];
-    if (indice.objProp1 === objProp1) {
+    var indice = arr[i];   // declaring a value that equates to any index in the array.
+    if (indice.objProp1 === objProp1) { // if the "object" ID within the indice is equivalent to what we are looking for, then we invoke th callBack
     }
       cb(indice);
   }
